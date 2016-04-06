@@ -4,11 +4,9 @@ function! OpenQUnit(params)
   silent! exec "silent! !open " . url | redraw!
 endfunction
 
-function! RunQunitFile()
-  let file_name =  @%
-  let file_name = substitute(file_name, ".[^\/]*\/", "", "g")
-  let file_name = substitute(file_name, "-test.js", "", "g")
-  call OpenQUnit(file_name)
+function! RunQunit()
+  let url = "http://localhost:7357/tests/index.html"
+  silent! exec "silent! !open " . url | redraw!
 endfunction
 
 function! RunQunitFocused()
@@ -19,8 +17,8 @@ function! RunQunitFocused()
   call OpenQUnit(test_name)
 endfunction
 
-command! -nargs=* -range RunQunitFile :call RunQunitFile()
+command! -nargs=* -range RunQunit :call RunQunit()
 command! -nargs=* -range RunQunitFocused :call RunQunitFocused()
 
-nnoremap <leader>e :RunQunitFile<CR>
-nnoremap <leader>E :RunQunitFocused<CR>
+nnoremap <leader>Q :RunQunit<CR>
+nnoremap <leader>q :RunQunitFocused<CR>
