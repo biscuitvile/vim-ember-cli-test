@@ -5,9 +5,9 @@ the browser more convenient from vim.
 
 ## Mappings
 
-`<leader>e` Will open the entire current test module in the browser
+`<leader>q` Will open the nearest named test in the browser
 
-`<leader>E` Will open the nearest specific test in the browser
+`<leader>Q` Will run all the tests in the browser
 
 ## Credit
 
