@@ -5,7 +5,7 @@ function! OpenQUnit(params)
 endfunction
 
 function! RunQunit()
-  let url = "http://localhost:7357/tests/index.html"
+  let url = "http://localhost:7357/tests/index.html?hidepassed"
   silent! exec "silent! !open " . url | redraw!
 endfunction
 
